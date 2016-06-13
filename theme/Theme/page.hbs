@@ -1,0 +1,38 @@
+{{!< default}}
+{{#post}}
+
+{{#if image}}
+<div class="uk-width-1-1 uk-cover-background postcover uk-clearfix" style="background: url('{{image}}') no-repeat fixed 50% 0 / 100% auto">
+	<div class="uk-overlay-background uk-flex uk-flex-bottom uk-padding-remove">
+	<div class="uk-width-8-10 uk-width-small-7-10 uk-width-medium-6-10 uk-container uk-container-center uk-overlay-bottom uk-contrast uk-margin-bottom uk-animation-slide-bottom">
+		<h1 class="uk-article-title uk-margin-top uk-margin-small">{{title}}</h1><hr class="uk-article-divider uk-margin-small" />
+		<p class="uk-article-meta uk-margin-small-top uk-margin-bottom">Written on
+			<time datetime="{{date published_at format='YYYY-MM-DD'}}" content="{{date published_at format='YYYY-MM-DD'}}">
+			{{date published_at format='MMMM, DD YYYY'}}
+			</time>
+		</p>
+	</div>
+	</div>
+</div>	
+{{/if}}	
+
+<div class="uk-clearfix shade1">
+<article class="uk-width-8-10 uk-width-small-7-10 uk-width-medium-6-10 uk-container uk-container-center uk-margin-large-top uk-margin-large uk-article {{post_class}}" role="main">
+
+	{{^if image}}
+		<h1 class="uk-article-title uk-margin-small">{{title}}</h1><hr class="uk-article-divider uk-margin-small" />
+		<p class="uk-article-meta uk-margin uk-margin-small-top">Written on
+		  <time datetime="{{date published_at format='YYYY-MM-DD'}}" content="{{date published_at format='YYYY-MM-DD'}}">
+		    {{date published_at format='MMMM, DD YYYY'}}
+		  </time>
+		</p>		
+	{{/if}}	
+
+	<div class="dropcap uk-article-lead">
+	{{content}}
+	</div>              
+
+</article>
+</div>
+
+{{/post}}
